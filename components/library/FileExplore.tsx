@@ -125,10 +125,10 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ initialFiles }) => {
   };
 
   return (
-    <div style={{ overflowX: 'auto' }} className='flex flex-col gap-4 pt-[50px]'>
-      <div className='flex flex-row items-center justify-between gap-4 pr-[100px]'>
+    <div style={{ overflowX: 'auto' }} className='flex flex-col gap-2 pt-[50px]'>
+      <div className='flex flex-row items-center justify-between gap-4 '>
         <div className='flex items-center gap-4'>
-        <button onClick={goBack} disabled={path.length === 0} className=' border border-slate-300 px-[10px] py-[5px] rounded hover:cursor-pointer hover:border-indigo-600'>←Go Back</button>
+        <button onClick={goBack} disabled={path.length === 0} className=' border border-slate-300 px-[10px] py-[5px] rounded hover:cursor-pointer hover:border-indigo-600'>◀ Go Back</button>
         <button onClick={createNewCollection} className=' border border-slate-300 px-[10px] py-[5px] rounded flex items-center hover:cursor-pointer hover:border-indigo-600'>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_2312_1880" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -194,16 +194,16 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ initialFiles }) => {
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
           <tr className='tb-head'>
-            <th className='border-l-2 border-slate-500 max-w-[30px]'></th>
-            <th onClick={() => requestSort('title')} style={{ cursor: 'pointer' }} className='border-l-2 border-slate-500 '>{(sortConfig.key == 'title' && sortConfig.direction == 'descending') ? 'Title↓' : 'Title↑'}</th>
-            <th onClick={() => requestSort('author')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'author' && sortConfig.direction == 'descending') ? 'Author↓' : 'Author↑'}</th>
-            <th onClick={() => requestSort('name')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'name' && sortConfig.direction == 'descending') ? 'Name↓' : 'Name↑'}</th>
-            <th onClick={() => requestSort('type')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'type' && sortConfig.direction == 'descending') ? 'Type↓' : 'Type↑'}</th>
-            <th onClick={() => requestSort('size')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'size' && sortConfig.direction == 'descending') ? 'Size↓' : 'Size↑'}</th>
-            <th onClick={() => requestSort('publicationDate')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'publicationDate' && sortConfig.direction == 'descending') ? 'Publication Date↓' : 'Publication Date↑'}</th>
-            <th onClick={() => requestSort('dateUploaded')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'dateUploaded' && sortConfig.direction == 'descending') ? 'Date Uploaded↓' : 'Date Uploaded↑'}</th>
-            <th onClick={() => requestSort('status')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'status' && sortConfig.direction == 'descending') ? 'Status↓' : 'Status↑'}</th>
-            <th onClick={() => requestSort('tags')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'tags' && sortConfig.direction == 'descending') ? 'Tags↓' : 'Tags↑'}</th>
+            <th className='border-l border-[#636262]  max-w-[30px]'></th>
+            <th onClick={() => requestSort('title')} style={{ cursor: 'pointer' }} className='border-l border-[#636262] '>{(sortConfig.key == 'title' && sortConfig.direction == 'descending') ? 'Title↓' : 'Title↑'}</th>
+            <th onClick={() => requestSort('author')} style={{ cursor: 'pointer' }}  className='border-l border-[#636262]  '>{(sortConfig.key == 'author' && sortConfig.direction == 'descending') ? 'Author↓' : 'Author↑'}</th>
+            <th onClick={() => requestSort('name')} style={{ cursor: 'pointer' }}  className='border-l border-[#636262]  '>{(sortConfig.key == 'name' && sortConfig.direction == 'descending') ? 'Name↓' : 'Name↑'}</th>
+            <th onClick={() => requestSort('type')} style={{ cursor: 'pointer' }}  className='border-l border-[#636262]  '>{(sortConfig.key == 'type' && sortConfig.direction == 'descending') ? 'Type↓' : 'Type↑'}</th>
+            <th onClick={() => requestSort('size')} style={{ cursor: 'pointer' }}  className='border-l border-[#636262]  '>{(sortConfig.key == 'size' && sortConfig.direction == 'descending') ? 'Size↓' : 'Size↑'}</th>
+            <th onClick={() => requestSort('publicationDate')} style={{ cursor: 'pointer' }}  className='border-l border-[#636262]  '>{(sortConfig.key == 'publicationDate' && sortConfig.direction == 'descending') ? 'Publication Date↓' : 'Publication Date↑'}</th>
+            <th onClick={() => requestSort('dateUploaded')} style={{ cursor: 'pointer' }}  className='border-l border-[#636262]  '>{(sortConfig.key == 'dateUploaded' && sortConfig.direction == 'descending') ? 'Date Uploaded↓' : 'Date Uploaded↑'}</th>
+            <th onClick={() => requestSort('status')} style={{ cursor: 'pointer' }}  className='border-l border-[#636262]  '>{(sortConfig.key == 'status' && sortConfig.direction == 'descending') ? 'Status↓' : 'Status↑'}</th>
+            <th onClick={() => requestSort('tags')} style={{ cursor: 'pointer' }}  className='border-l border-[#636262]  '>{(sortConfig.key == 'tags' && sortConfig.direction == 'descending') ? 'Tags↓' : 'Tags↑'}</th>
           </tr>
         </thead>
         <tbody>
