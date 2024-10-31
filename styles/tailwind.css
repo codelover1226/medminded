@@ -585,6 +585,9 @@ pre.hljs {
 .apexcharts-canvas .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
     @apply border-dark bg-[#060818];
 }
+.tb-head{
+    background-color: #EFF4FF !important;
+}
 
 .apexcharts-legend-series {
     @apply ltr:!mr-2 rtl:!ml-2;

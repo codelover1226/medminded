@@ -136,8 +136,8 @@ const Sidebar = () => {
                                         </button>
 
                                         {currentMenu == 'invoice' ? (
-                                            <div className='pl-[20px]'>
-                                                My collections:
+                                            <div className='pl-[40px] py-[10px]'>
+                                                <h1 className='mb-[10px]'>My collections:</h1>
                                                 <FileExplorerTree files={files} />
                                             </div>
                                         ) : (

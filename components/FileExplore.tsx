@@ -191,17 +191,17 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ initialFiles }) => {
       </div>
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
-          <tr className=''>
-            <th>Select</th>
-            <th onClick={() => requestSort('title')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'title' && sortConfig.direction == 'descending') ? 'Title↓' : 'Title↑'}</th>
-            <th onClick={() => requestSort('author')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'author' && sortConfig.direction == 'descending') ? 'Author↓' : 'Author↑'}</th>
-            <th onClick={() => requestSort('name')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'name' && sortConfig.direction == 'descending') ? 'Name↓' : 'Name↑'}</th>
-            <th onClick={() => requestSort('type')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'type' && sortConfig.direction == 'descending') ? 'Type↓' : 'Type↑'}</th>
-            <th onClick={() => requestSort('size')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'size' && sortConfig.direction == 'descending') ? 'Size↓' : 'Size↑'}</th>
-            <th onClick={() => requestSort('publicationDate')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'publicationDate' && sortConfig.direction == 'descending') ? 'Publication Date↓' : 'Publication Date↑'}</th>
-            <th onClick={() => requestSort('dateUploaded')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'dateUploaded' && sortConfig.direction == 'descending') ? 'Date Uploaded↓' : 'Date Uploaded↑'}</th>
-            <th onClick={() => requestSort('status')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'status' && sortConfig.direction == 'descending') ? 'Status↓' : 'Status↑'}</th>
-            <th onClick={() => requestSort('tags')} style={{ cursor: 'pointer' }}>{(sortConfig.key == 'tags' && sortConfig.direction == 'descending') ? 'Tags↓' : 'Tags↑'}</th>
+          <tr className='tb-head'>
+            <th className='border-l-2 border-slate-500 '>Select</th>
+            <th onClick={() => requestSort('title')} style={{ cursor: 'pointer' }} className='border-l-2 border-slate-500 '>{(sortConfig.key == 'title' && sortConfig.direction == 'descending') ? 'Title↓' : 'Title↑'}</th>
+            <th onClick={() => requestSort('author')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'author' && sortConfig.direction == 'descending') ? 'Author↓' : 'Author↑'}</th>
+            <th onClick={() => requestSort('name')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'name' && sortConfig.direction == 'descending') ? 'Name↓' : 'Name↑'}</th>
+            <th onClick={() => requestSort('type')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'type' && sortConfig.direction == 'descending') ? 'Type↓' : 'Type↑'}</th>
+            <th onClick={() => requestSort('size')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'size' && sortConfig.direction == 'descending') ? 'Size↓' : 'Size↑'}</th>
+            <th onClick={() => requestSort('publicationDate')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'publicationDate' && sortConfig.direction == 'descending') ? 'Publication Date↓' : 'Publication Date↑'}</th>
+            <th onClick={() => requestSort('dateUploaded')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'dateUploaded' && sortConfig.direction == 'descending') ? 'Date Uploaded↓' : 'Date Uploaded↑'}</th>
+            <th onClick={() => requestSort('status')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'status' && sortConfig.direction == 'descending') ? 'Status↓' : 'Status↑'}</th>
+            <th onClick={() => requestSort('tags')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'tags' && sortConfig.direction == 'descending') ? 'Tags↓' : 'Tags↑'}</th>
           </tr>
         </thead>
         <tbody>
