@@ -91,12 +91,12 @@ const Sidebar = () => {
     return (
         <div className={semidark ? 'dark' : ''}>
             <nav
-                className={`sidebar fixed bottom-0 top-0 z-50 h-full min-h-screen w-[260px] shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-all duration-300 ${semidark ? 'text-white-dark' : ''}`}
+                className={`sidebar fixed bottom-0 top-[44px] z-50 h-full min-h-[calc(100vh - 44px)] w-[260px] shadow-[0_0_0_0_rgba(94,92,154,0.1)] transition-all duration-300 ${semidark ? 'text-white-dark' : ''}`}
             >
                 <div className="h-full bg-white dark:bg-black">
                     <div className="flex items-center justify-between px-4 py-3">
                         <Link href="/" className="main-logo flex shrink-0 items-center">
-                            <IconLogo fill={isDarkMode ? "white" : "black"}/>
+                            <IconLogo fill={isDarkMode ? "white" : "#636262"}/>
                         </Link>
 
                         <button
@@ -115,7 +115,7 @@ const Sidebar = () => {
                                         <Link href="/home" className="group">
                                             <div className="flex items-center">
                                                 <IconHome className="shrink-0 group-hover:!text-primary" fill={isDarkMode ? "white" : "black"}/>
-                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#c9ced6] dark:group-hover:text-white-dark">{t('Home')}</span>
+                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#c9ced6] hover:underline dark:group-hover:text-white-dark">{t('Home')}</span>
                                             </div>
                                         </Link>
                                     </li>
@@ -123,7 +123,7 @@ const Sidebar = () => {
                                         <Link href="/library" className="group">
                                             <div className="flex items-center">
                                                 <IconLibrary className="shrink-0 group-hover:!text-primary" fill={isDarkMode ? "white" : "black"}/>
-                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#c9ced6] dark:group-hover:text-white-dark">{t('Library')}</span>
+                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#c9ced6] hover:underline dark:group-hover:text-white-dark">{t('Library')}</span>
                                             </div>
                                         </Link>
                                     </li>
@@ -131,7 +131,7 @@ const Sidebar = () => {
                                         <Link href="/history" className="group">
                                             <div className="flex items-center">
                                                 <IconHistory className="shrink-0 group-hover:!text-primary" fill={isDarkMode ? "white" : "black"}/>
-                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#c9ced6] dark:group-hover:text-white-dark">{t('History')}</span>
+                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#c9ced6] hover:underline dark:group-hover:text-white-dark">{t('History')}</span>
                                             </div>
                                         </Link>
                                     </li>
@@ -139,7 +139,7 @@ const Sidebar = () => {
                                         <Link href="/medconnect" className="group">
                                             <div className="flex items-center">
                                                 <IconMedConnect className="shrink-0 group-hover:!text-primary" fill={isDarkMode ? "white" : "black"}/>
-                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#c9ced6] dark:group-hover:text-white-dark">{t('MedConnect')}</span>
+                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#c9ced6] hover:underline dark:group-hover:text-white-dark">{t('MedConnect')}</span>
                                             </div>
                                         </Link>
                                     </li>

@@ -12,6 +12,11 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
     return (
         <>
             {/* BEGIN MAIN CONTAINER */}
+            <div className='text-lg mx-auto py-2 text-dark dark:text-white bg-white dark:bg-black'>
+                <div className='mx-auto w-fit'>
+                Welcome to MedMinded. We’re in beta -- Build your medical library and start chatting for FREE. New features coming soon! 
+                </div>
+            </div>
             <div className="relative">
 
                 <Overlay />
@@ -26,7 +31,6 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
                     <Sidebar />
                     {/* END SIDEBAR */}
                     <div className="main-content flex min-h-screen flex-col">
-                        <div className='fs-4'>Welcome to MedMinded. We’re in beta -- Build your medical library and start chatting for FREE. New features coming soon! </div>
                         {/* BEGIN TOP NAVBAR */}
                         <Header />
                         {/* END TOP NAVBAR */}
