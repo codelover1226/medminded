@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 const Page = () => {
-    return <div>medconnect page</div>;
+    return <div></div>;
 };
 
 export default Page;
