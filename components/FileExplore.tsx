@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FileNode } from '../types/File';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface FileExplorerProps {
   initialFiles: FileNode[];

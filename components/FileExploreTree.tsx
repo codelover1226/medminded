@@ -23,7 +23,7 @@ const FileExplorerTree: React.FC<FileExplorerTreeProps> = ({ files }) => {
               style={{ cursor: 'pointer', fontWeight: 'bold' }}
               onClick={() => toggleFolder(file.id)}
             >
-              📁 {file.name} (Modified: {file.modified})
+              📁 {file.name}
             </div>
             {/* Render children if the folder is open */}
             {openFolders[file.id] && (
@@ -33,9 +33,7 @@ const FileExplorerTree: React.FC<FileExplorerTreeProps> = ({ files }) => {
         );
       } else {
         return (
-          <div key={file.id} style={{ marginLeft: '20px' }}>
-            📄 {file.name} (Modified: {file.modified}, Size: {file.size})
-          </div>
+          <></>
         );
       }
     });
