@@ -2,7 +2,7 @@ import ProviderComponent from '@/components/layouts/provider-component';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/tailwind.css';
 import { Metadata } from 'next';
-import { Nunito } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 
 export const metadata: Metadata = {
     title: {
@@ -10,17 +10,17 @@ export const metadata: Metadata = {
         default: 'MedMinded',
     },
 };
-const nunito = Nunito({
+const dmSans = DM_Sans({
     weight: ['400', '500', '600', '700', '800'],
     subsets: ['latin'],
     display: 'swap',
-    variable: '--font-nunito',
+    variable: '--font-dm-sans',
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={nunito.variable}>
+            <body className={dmSans.variable}>
                 <ProviderComponent>{children}</ProviderComponent>
             </body>
         </html>
