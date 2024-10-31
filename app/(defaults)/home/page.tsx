@@ -6,6 +6,7 @@ import IconBook4 from '@/components/icon/home/icon-book4';
 import Dropdown from '@/components/dropdown';
 import ResponseLength from '@/components/home/response-length';
 import QuestionInput from '@/components/home/question-input';
+import Feedback from '@/components/home/feedback';
 import { IRootState } from '@/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -15,8 +16,16 @@ const Page = () => {
     const [responseLength, setResponseLength] = useState<string>('standard');
     const [mode, setMode] = useState<string>('standard');
 
+    const onEnter = () => {
+        console.log("Enter :", mode, responseLength);
+    }
+
+    const onFeedbackSubmit = (payload:any) => {
+        console.log("onFeedbackSubmit :", payload);
+    }
+    
     return (
-        <div>
+        <div className='relative h-full'>
             <div className='h-[18vh]'></div>
             <div className='text-4xl mx-auto w-fit pb-20'>Advancing medical intelligence</div>
             <div className='max-w-[940px] flex justify-between mx-auto'>
@@ -28,9 +37,10 @@ const Page = () => {
             <div className='max-w-[940px] mx-auto pt-6'>
                 <QuestionInput 
                     responseLength={responseLength} setResponseLength={setResponseLength}
-                    mode={mode} setMode={setMode}    
+                    mode={mode} setMode={setMode} onEnter={onEnter}
                 />
             </div>
+            <Feedback onFeedbackSubmit={onFeedbackSubmit}/>
         </div>
     );
 };
