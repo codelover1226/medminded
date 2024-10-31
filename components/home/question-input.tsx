@@ -30,52 +30,54 @@ const OptionBar = ({mode, setMode} : {
     const isDarkMode = useSelector((state: IRootState) => state.themeConfig.isDarkMode);
 
     return (
-        <div className='flex justify-start gap-3 items-center'>
-            <IconMic className='cursor-pointer'/>
-            <div className='cursor-pointer flex gap-1 bg-[#FCFFCF] hover:bg-[#f6fabd] text-base px-3 p-1 rounded-md'>
-                <IconBolt />
-                Quick Upload
-            </div>
-            <div className='dropdown'>
-                <Dropdown
-                    offset={[0, 8]}
-                    placement={`${isRtl
-                    ? 'bottom-end'
-                    : 'bottom-start'}`}
-                    btnClassName="relative group block"
-                    button={<div className = 'text-base px-4 bg-[#F0EFED] hover:bg-[#ECF1FF] cursor-pointer flex items-center justify-between gap-1 p-1 rounded-md' > 
-                            <IconMode/>{modeText[mode]} 
-                        </div>}
-                >
-                    <ul
-                        className="font-normal w-[150px] p-3 !py-0 text-dark dark:text-white-dark dark:text-white-light/90">
-                        <li onClick={() => {setMode("academic")}}>
-                            <div className="dark:hover:text-white hover:bg-gray-200 p-3 cursor-pointer text-base">
-                                {modeText['academic']}
-                            </div>
-                        </li>
-                        <li onClick={() => {setMode("clinical")}}>
-                            <div className="dark:hover:text-white hover:bg-gray-200 p-3 cursor-pointer text-base">
-                                {modeText['clinical']}
-                            </div>
-                        </li>
-                        <li onClick={() => {setMode("research")}}>
-                            <div className="dark:hover:text-white hover:bg-gray-200 p-3 cursor-pointer text-base">
-                                {modeText['research']}
-                            </div>
-                        </li>
-                        <li onClick={() => {setMode("study")}}>
-                            <div className="dark:hover:text-white hover:bg-gray-200 p-3 cursor-pointer text-base">
-                                {modeText['study']}
-                            </div>
-                        </li>
-                        <li onClick={() => {setMode("standard")}}>
-                            <div className="dark:hover:text-white hover:bg-gray-200 p-3 cursor-pointer text-base">
-                                {modeText['standard']}
-                            </div>
-                        </li>
-                    </ul>
-                </Dropdown>
+        <div className='flex justify-between'>
+            <div className='flex justify-start gap-3 items-center'>
+                <IconMic className='cursor-pointer'/>
+                <div className='cursor-pointer flex gap-1 bg-[#FCFFCF] hover:bg-[#f6fabd] text-base px-3 p-1 rounded-md'>
+                    <IconBolt />
+                    Quick Upload
+                </div>
+                <div className='dropdown'>
+                    <Dropdown
+                        offset={[0, 8]}
+                        placement={`${isRtl
+                        ? 'bottom-end'
+                        : 'bottom-start'}`}
+                        btnClassName="relative group block"
+                        button={<div className = 'text-base px-4 bg-[#F0EFED] hover:bg-[#ECF1FF] cursor-pointer flex items-center justify-between gap-1 p-1 rounded-md' > 
+                                <IconMode/>{modeText[mode]} 
+                            </div>}
+                    >
+                        <ul
+                            className="font-normal w-[150px] p-3 !py-0 text-dark dark:text-white-dark dark:text-white-light/90">
+                            <li onClick={() => {setMode("academic")}}>
+                                <div className="dark:hover:text-white flex gap-1 hover:bg-gray-200 p-3 cursor-pointer text-base">
+                                    <IconAcacemic/> {modeText['academic']}
+                                </div>
+                            </li>
+                            <li onClick={() => {setMode("clinical")}}>
+                                <div className="dark:hover:text-white flex gap-1 hover:bg-gray-200 p-3 cursor-pointer text-base">
+                                    <IconClinical/> {modeText['clinical']}
+                                </div>
+                            </li>
+                            <li onClick={() => {setMode("research")}}>
+                                <div className="dark:hover:text-white flex gap-1 hover:bg-gray-200 p-3 cursor-pointer text-base">
+                                    <IconResearch/> {modeText['research']}
+                                </div>
+                            </li>
+                            <li onClick={() => {setMode("study")}}>
+                                <div className="dark:hover:text-white flex gap-1 hover:bg-gray-200 p-3 cursor-pointer text-base">
+                                    <IconStudy/> {modeText['study']}
+                                </div>
+                            </li>
+                            <li onClick={() => {setMode("standard")}}>
+                                <div className="dark:hover:text-white flex gap-1 hover:bg-gray-200 p-3 cursor-pointer text-base">
+                                    <IconStandard/> {modeText['standard']}
+                                </div>
+                            </li>
+                        </ul>
+                    </Dropdown>
+                </div>            
             </div>
         </div>
     )
