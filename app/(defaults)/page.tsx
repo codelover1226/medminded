@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 const Sales = () => {
-    return <div>starter page</div>;
+    return <div></div>;
 };
 
 export default Sales;
