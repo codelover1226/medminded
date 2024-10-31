@@ -97,7 +97,7 @@ const Sidebar = () => {
     return (
         <div className={semidark ? 'dark' : ''}>
             <nav
-                className={`sidebar fixed bottom-0 top-[44px] z-50 h-full min-h-[calc(100vh - 44px)] w-[260px] shadow-[0_0_0_0_rgba(94,92,154,0.1)] transition-all duration-300 ${semidark ? 'text-white-dark' : ''}`}
+                className={`sidebar fixed bottom-0 top-0 lg:top-[44px] z-50 h-full min-h-[calc(100vh - 44px)] w-[260px] shadow-[0_0_0_0_rgba(94,92,154,0.1)] transition-all duration-300 ${semidark ? 'text-white-dark' : ''}`}
             >
                 <div className="h-full bg-white dark:bg-black">
                     <div className="flex items-center justify-between px-4 py-3">
@@ -113,7 +113,7 @@ const Sidebar = () => {
                             <IconCaretsDown className="m-auto rotate-90" />
                         </button>
                     </div>
-                    <PerfectScrollbar className="relative h-[calc(100vh-80px)]">
+                    <PerfectScrollbar className="relative h-[calc(100vh-118px)]">
                         <ul className="relative space-y-0.5 p-4 pt-9 font-semibold">
                             <li className="nav-item">
                                 <ul>

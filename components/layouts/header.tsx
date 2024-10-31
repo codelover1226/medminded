@@ -151,8 +151,8 @@ const Header = () => {
     return (
         <header className={`z-40 ${themeConfig.semidark && themeConfig.menu === 'horizontal' ? 'dark' : ''}`}>
             <div className="shadow-sm">
-                <div className="relative flex w-full items-center bg-white px-5 py-2.5 dark:bg-black">
-                    <div className="horizontal-logo flex items-center justify-between ltr:mr-2 rtl:ml-2 lg:hidden">
+                <div className="relative lg:p-0 flex w-full items-center bg-white px-5 py-2.5 dark:bg-black">
+                    <div className="horizontal-logo lg:py-8px flex items-center justify-between ltr:mr-2 rtl:ml-2 lg:hidden">
                         <Link href="/" className="main-logo flex shrink-0 items-center">
                             <IconLogo fill={isDarkMode ? "white" : "black"}/>
                         </Link>
@@ -212,7 +212,7 @@ const Header = () => {
                                 <IconSearch className="mx-auto h-4.5 w-4.5 dark:text-[#d0d2d6]" />
                             </button>
                         </div>
-                        <div>
+                        <div className='hidden'>
                             {themeConfig.theme === 'light' ? (
                                 <button
                                     className={`${
@@ -406,7 +406,7 @@ const Header = () => {
                                 </ul>
                             </Dropdown>
                         </div>
-                        <div className="dropdown flex shrink-0">
+                        <div className="horizontal-logo dropdown flex shrink-0 lg:hidden pr-4">
                             <Dropdown
                                 offset={[0, 8]}
                                 placement={`${isRtl ? 'bottom-start' : 'bottom-end'}`}
