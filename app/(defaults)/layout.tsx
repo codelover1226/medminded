@@ -13,6 +13,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         <>
             {/* BEGIN MAIN CONTAINER */}
             <div className="relative">
+
                 <Overlay />
                 <ScrollToTop />
 
@@ -25,6 +26,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
                     <Sidebar />
                     {/* END SIDEBAR */}
                     <div className="main-content flex min-h-screen flex-col">
+                        <div className='fs-4'>Welcome to MedMinded. We’re in beta -- Build your medical library and start chatting for FREE. New features coming soon! </div>
                         {/* BEGIN TOP NAVBAR */}
                         <Header />
                         {/* END TOP NAVBAR */}
