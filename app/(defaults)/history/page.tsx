@@ -18,7 +18,7 @@ const Page = () => {
                 <div className='flex items-center h-[42px]'>
                     <p className="block text-[#8B8A91] text-[14px]">Today</p>
                 </div>
-                <div className='pl-8'>
+                <div className='pl-8 overflow-y-auto'>
                     <HistoryItem topic='Hello this is history item!'></HistoryItem>
                     <HistoryItem></HistoryItem>
                     <HistoryItem></HistoryItem>
