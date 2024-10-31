@@ -125,8 +125,9 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ initialFiles }) => {
   };
 
   return (
-    <div style={{ overflowX: 'auto' }} className='flex flex-col gap-4'>
-      <div className='flex flex-row items-center gap-4'>
+    <div style={{ overflowX: 'auto' }} className='flex flex-col gap-4 pt-[50px]'>
+      <div className='flex flex-row items-center justify-between gap-4 pr-[100px]'>
+        <div className='flex items-center gap-4'>
         <button onClick={goBack} disabled={path.length === 0} className=' border border-slate-300 px-[10px] py-[5px] rounded hover:cursor-pointer hover:border-indigo-600'>←Go Back</button>
         <button onClick={createNewCollection} className=' border border-slate-300 px-[10px] py-[5px] rounded flex items-center hover:cursor-pointer hover:border-indigo-600'>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,8 +173,9 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ initialFiles }) => {
 
           Tag
         </button>
+        </div>
 
-        <div className="max-w-md mx-auto">
+        <div className="max-w-md">
           <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
           <div className="relative">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -187,12 +189,12 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ initialFiles }) => {
 
       </div>
       <div>
-        <h2>Current Path: {path.join(' / ')}</h2>
+        {/* <h2>Current Path: {path.join(' / ')}</h2> */}
       </div>
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
           <tr className='tb-head'>
-            <th className='border-l-2 border-slate-500 '>Select</th>
+            <th className='border-l-2 border-slate-500 max-w-[30px]'></th>
             <th onClick={() => requestSort('title')} style={{ cursor: 'pointer' }} className='border-l-2 border-slate-500 '>{(sortConfig.key == 'title' && sortConfig.direction == 'descending') ? 'Title↓' : 'Title↑'}</th>
             <th onClick={() => requestSort('author')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'author' && sortConfig.direction == 'descending') ? 'Author↓' : 'Author↑'}</th>
             <th onClick={() => requestSort('name')} style={{ cursor: 'pointer' }}  className='border-l-2 border-slate-500 '>{(sortConfig.key == 'name' && sortConfig.direction == 'descending') ? 'Name↓' : 'Name↑'}</th>
@@ -211,7 +213,7 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ initialFiles }) => {
               onDoubleClick={() => navigateToFolder(file)}
               style={{ cursor: 'pointer' }}
             >
-              <td>
+              <td className='max-w-[30px]'>
                 <input
                   type="checkbox"
                   checked={selectedFiles.has(file.id)}

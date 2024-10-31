@@ -62,6 +62,7 @@ const Sidebar = () => {
 
     useEffect(() => {
         const selector = document.querySelector('.sidebar ul a[href="' + window.location.pathname + '"]');
+       
         if (selector) {
             selector.classList.add('active');
             const ul: any = selector.closest('ul.sub-menu');
@@ -85,6 +86,10 @@ const Sidebar = () => {
     }, [pathname]);
 
     const setActiveRoute = () => {
+        if(window.location.pathname !== '/library'){
+            console.log('ok')
+            setCurrentMenu('');
+        }
         let allLinks = document.querySelectorAll('.sidebar ul a.active');
         for (let i = 0; i < allLinks.length; i++) {
             const element = allLinks[i];
@@ -126,15 +131,12 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="menu nav-item">
-                                        <button type="button" className={`${currentMenu === 'invoice' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('invoice')}>
+                                        <Link href='/library' className={`nav-link group w-full`} onClick={() => toggleMenu('invoice')} >
                                             <div className="flex items-center">
                                                 <IconLibrary className="shrink-0 group-hover:!text-primary" fill={isDarkMode ? "white" : "black"} />
-                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Library')}</span>
+                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] hover:underline dark:group-hover:text-white-dark">{t('Library')}</span>
                                             </div>
-
-
-                                        </button>
-
+                                        </Link>
                                         {currentMenu == 'invoice' ? (
                                             <div className='pl-[40px] py-[10px]'>
                                                 <h1 className='mb-[10px]'>My collections:</h1>
