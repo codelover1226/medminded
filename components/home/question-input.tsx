@@ -79,6 +79,9 @@ const OptionBar = ({mode, setMode} : {
                     </Dropdown>
                 </div>            
             </div>
+            <div>
+                asdf
+            </div>
         </div>
     )
 }
