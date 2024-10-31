@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
-import FileExplorerTree from '@/components/FileExploreTree';
-import FileExplorer from '@/components/FileExplore';
+import FileExplorerTree from '@/components/library/FileExploreTree';
+import FileExplorer from '@/components/library/FileExplore';
 import { FileNode } from '@/types/File';
 import _files from '@/data/files.json';
 interface LibraryProps {

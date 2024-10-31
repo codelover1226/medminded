@@ -39,7 +39,7 @@ import IconLibrary from '@/components/icon/sidebar/icon-library';
 import IconMedConnect from '@/components/icon/sidebar/icon-medconnect';
 import { usePathname } from 'next/navigation';
 import { getTranslation } from '@/i18n';
-import FileExplorerTree from '../FileExploreTree';
+import FileExplorerTree from '../library/FileExploreTree';
 import _files from '@/data/files.json';
 
 const Sidebar = () => {
@@ -87,7 +87,6 @@ const Sidebar = () => {
 
     const setActiveRoute = () => {
         if(window.location.pathname !== '/library'){
-            console.log('ok')
             setCurrentMenu('');
         }
         let allLinks = document.querySelectorAll('.sidebar ul a.active');
