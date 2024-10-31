@@ -33,22 +33,22 @@ const HistoryItem: React.FC<HistoryItemProps> = ({ topic, created_at }) => {
 					>
 						<ul className="w-[150px] !py-0 font-semibold text-dark dark:text-white-dark dark:text-white-light/90">
 							<li>
-								<Link href="/#" className="dark:hover:text-white">
+								<Link href="/history" className="dark:hover:text-white">
 									Share
 								</Link>
 							</li>
 							<li>
-								<Link href="/#" className="dark:hover:text-white">
+								<Link href="/history" className="dark:hover:text-white">
 									Rename
 								</Link>
 							</li>
 							<li>
-								<Link href="/#" className="dark:hover:text-white">
+								<Link href="/history" className="dark:hover:text-white">
 									Bookmark
 								</Link>
 							</li>
 							<li>
-								<Link href="/#" className="dark:hover:text-white">
+								<Link href="/history" className="dark:hover:text-white">
 									Delete Chat
 								</Link>
 							</li>
