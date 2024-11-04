@@ -14,7 +14,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         <>
             {/* BEGIN MAIN CONTAINER */}
             <div className='text-lg mx-auto py-2 text-dark dark:text-white bg-white dark:bg-black'>
-                <div className='mx-auto w-fit'>
+                <div className='mx-auto w-fit text-[#636262] text-[18px]'>
                 Welcome to MedMinded. We’re in beta -- Build your medical library and start chatting for FREE. New features coming soon! 
                 </div>
             </div>
