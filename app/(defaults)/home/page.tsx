@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import IconEditNote from '@/components/icon/home/icon-edit-note';
 import IconBook4 from '@/components/icon/home/icon-book4';
 import Dropdown from '@/components/dropdown';
@@ -13,11 +14,12 @@ import { useState } from 'react';
 import './page.css';
 
 const Page = () => {
+    const router = useRouter();
     const [responseLength, setResponseLength] = useState<string>('standard');
     const [mode, setMode] = useState<string>('standard');
 
     const onEnter = () => {
-        console.log("Enter :", mode, responseLength);
+        router.push('/answer');
     }
 
     const onFeedbackSubmit = (payload:any) => {
