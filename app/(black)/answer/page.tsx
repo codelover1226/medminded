@@ -118,8 +118,42 @@ const Answer = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' h-[100vh] bg-[#FBFAF8]'>
-                    pdf printer
+                <div className=' h-[100vh] bg-[#FBFAF8] flex text-[#636262]'>
+                    <div className='pt-[90px] px-[40px] pb-[40px] h-[100vh] flex-grow'>
+                        <div className='flex flex-row-reverse gap-3 p-2'>
+                            <p>Page 1 of 1988</p>
+                            <div className='cursor-pointer '><Image src={'/assets/images/zoom_out.png'} alt='pan_tool' width={24} height={24}/></div>
+                            <div  className='cursor-pointer'><Image src={'/assets/images/zoom_in.png'} alt='pan_tool' width={24} height={24}/></div>
+                            <div  className='cursor-pointer'><Image src={'/assets/images/pan_tool.png'} alt='pan_tool' width={24} height={24}/></div>
+                        </div>
+                        <div className='bg-[#fff] h-full flex '>
+                            <div className='h-full'>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div className='h-[100vh] bg-[#F0EFED] w-[100px] p-[10px] pt-[30px]'>
+                        <div className='cursor-pointer flex flex-row-reverse'><Image src={'/assets/images/edit.png'} alt='pan_tool' width={24} height={24}/></div>
+                        <p className='text-center text-[15px]'>References</p>
+                        <div className='flex flex-col items-center mt-[200px]'>
+                            <div className='cursor-pointer'>
+                                <div className='bg-[#D9D9D9] w-[60px] h-[60px] rounded-md'></div>
+                                <p>Doc1</p>
+                            </div>
+                            <div className='cursor-pointer'>
+                                <div className='bg-[#D9D9D9] w-[60px] h-[60px] rounded-md'></div>
+                                <p>Doc2</p>
+                            </div>
+                            <div className='cursor-pointer'>
+                                <div className='bg-[#D9D9D9] w-[60px] h-[60px] rounded-md'></div>
+                                <p>Doc3</p>
+                            </div>
+                            <div className='cursor-pointer'>
+                                <div className='bg-[#D9D9D9] w-[60px] h-[60px] rounded-md'></div>
+                                <p>Doc4</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
