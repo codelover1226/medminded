@@ -9,7 +9,7 @@ import IconSetting from '@/components/icon/header/icon-setting';
 import IconLogout from '@/components/icon/header/icon-logout';
 import Image from 'next/image';
 import QuestionInput from '@/components/home/question-input2';
-
+ 
 
 const Answer = () => {
     const [responseLength, setResponseLength] = useState<string>('standard');
