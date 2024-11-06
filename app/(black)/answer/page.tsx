@@ -9,8 +9,12 @@ import IconSetting from '@/components/icon/header/icon-setting';
 import IconLogout from '@/components/icon/header/icon-logout';
 import Image from 'next/image';
 import QuestionInput from '@/components/home/question-input2';
+<<<<<<< HEAD
 import PdfViewer from '@/components/PdfViewer';
 
+=======
+ 
+>>>>>>> b224b485a1c20397fd9364ff1a3f6da1cf9521b4
 
 const Answer = () => {
     const pdfUrl = 'example.pdf';
