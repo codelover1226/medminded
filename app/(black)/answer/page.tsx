@@ -9,9 +9,11 @@ import IconSetting from '@/components/icon/header/icon-setting';
 import IconLogout from '@/components/icon/header/icon-logout';
 import Image from 'next/image';
 import QuestionInput from '@/components/home/question-input2';
+import PdfViewer from '@/components/PdfViewer';
 
 
 const Answer = () => {
+    const pdfUrl = 'example.pdf';
     const [responseLength, setResponseLength] = useState<string>('standard');
     const [mode, setMode] = useState<string>('standard');
 
@@ -118,16 +120,11 @@ const Answer = () => {
                     </div>
                 </div>
                 <div className=' h-[100vh] bg-[#FBFAF8] flex text-[#636262]'>
-                    <div className='pt-[90px] px-[40px] pb-[40px] h-[100vh] flex-grow'>
-                        <div className='flex flex-row-reverse gap-3 p-2'>
-                            <p>Page 1 of 1988</p>
-                            <div className='cursor-pointer '><Image src={'/assets/images/zoom_out.png'} alt='pan_tool' width={24} height={24}/></div>
-                            <div  className='cursor-pointer'><Image src={'/assets/images/zoom_in.png'} alt='pan_tool' width={24} height={24}/></div>
-                            <div  className='cursor-pointer'><Image src={'/assets/images/pan_tool.png'} alt='pan_tool' width={24} height={24}/></div>
-                        </div>
-                        <div className='bg-[#fff] h-full flex '>
-                            <div className='h-full'>
-                                
+                    <div className=' h-[100vh] flex-grow'>
+                        
+                        <div className=' h-full flex '>
+                            <div className='h-full overflow-scroll'>
+                                <PdfViewer pdfUrl={pdfUrl}/>
                             </div>
                         </div>
                     </div>
