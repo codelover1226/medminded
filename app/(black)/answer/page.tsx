@@ -10,7 +10,7 @@ import IconLogout from '@/components/icon/header/icon-logout';
 import Image from 'next/image';
 import QuestionInput from '@/components/home/question-input2';
 import PdfViewer from '@/components/PdfViewer';
-const Answer = () => {
+const Answer = () => { 
     const pdfUrl = 'example.pdf';
     const [responseLength, setResponseLength] = useState<string>('standard');
     const [mode, setMode] = useState<string>('standard');
