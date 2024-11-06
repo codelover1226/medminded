@@ -41,7 +41,6 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfUrl }) => {
         const page = await pdf.getPage(pageNum);
         const viewport = page.getViewport({ scale });
 
-        // Resize the canvas
         canvas.width = viewport.width;
         canvas.height = viewport.height;
         context.clearRect(0, 0, canvas.width, canvas.height);
