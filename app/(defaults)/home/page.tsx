@@ -8,6 +8,7 @@ import Dropdown from '@/components/dropdown';
 import ResponseLength from '@/components/home/response-length';
 import QuestionInput from '@/components/home/question-input';
 import Feedback from '@/components/home/feedback';
+import FeedbackSuccess from '@/components/home/feedbackSuccess';
 import { IRootState } from '@/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -17,6 +18,7 @@ const Page = () => {
     const router = useRouter();
     const [responseLength, setResponseLength] = useState<string>('standard');
     const [mode, setMode] = useState<string>('standard');
+    const [hiddenFeedbackSuccess, setHiddenFeedbackSuccess] = useState<boolean>(true);
 
     const onEnter = () => {
         router.push('/answer');
@@ -24,8 +26,15 @@ const Page = () => {
 
     const onFeedbackSubmit = (payload:any) => {
         console.log("onFeedbackSubmit :", payload);
+        setTimeout(onFeedbackSuccess, 2000)
     }
     
+    const onFeedbackSuccess = () => {
+        console.log("onFeedbackSuccess")
+        setHiddenFeedbackSuccess(false)
+        setTimeout(() => setHiddenFeedbackSuccess(true), 5000)
+    }
+
     return (
         <div className='relative h-full'>
             <div className='h-[18vh]'></div>
@@ -43,6 +52,7 @@ const Page = () => {
                 />
             </div>
             <Feedback onFeedbackSubmit={onFeedbackSubmit}/>
+            <FeedbackSuccess hidden={hiddenFeedbackSuccess} />
         </div>
     );
 };

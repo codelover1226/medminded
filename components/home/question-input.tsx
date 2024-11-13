@@ -96,7 +96,7 @@ const OptionBar = ({mode, setMode, onEnter} : {
                             </li>
                         </ul>
                     </Dropdown>
-                </div>            
+                </div>   
             </div>
             <div onClick={onEnter}
                 className='cursor-pointer w-10 h-10 shadow-md hover:bg-slate-50 rounded-full flex items-center bg-[#ffffff] justify-center text-[30px]'>

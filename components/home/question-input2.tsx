@@ -11,6 +11,7 @@ import IconAcacemic from '@/components/icon/home/icon-academic';
 import IconStandard from '@/components/icon/home/icon-standard';
 import IconResearch from '@/components/icon/home/icon-research';
 import IconRightArrow from '@/components/icon/home/icon-right-arrow';
+import IconAddDoc from '@/components/icon/answer/icon-add-doc';
 import Dropdown from '@/components/dropdown';
 import {IRootState} from '@/store';
 import {useDispatch, useSelector} from 'react-redux';
@@ -26,14 +27,15 @@ const modeText: { [key: string]: string } = {
 }
 
 const micStateFill: { [key: string]: string } = {
-    ready: "#636262",
+    ready: "#8B8A91",
     preparing: "#628EFF",
     recording: "#13EF93",
 }
 
-const OptionBar = ({mode, setMode, onEnter} : {
+const OptionBar = ({mode, setMode, onEnter, onNewDoc} : {
     mode: string,
     setMode: (responseLength: string) => void
+    onNewDoc: () => void
     onEnter: () => void
 }) => {
     const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl';
@@ -51,10 +53,10 @@ const OptionBar = ({mode, setMode, onEnter} : {
 
     return (
         <div className='flex justify-between pr-1'>
-            <div className='flex justify-start gap-3 items-center'>
+            <div className='flex justify-start gap-1 items-center'>
                 <div onClick={handleMic}><IconMic className='cursor-pointer' fill={micStateFill[micState]} /></div>
-                <div className='cursor-pointer flex gap-1  text-base px-3 p-1 rounded-md'>
-                    <Image src="/assets/images/new_window.png" alt="new window" width="30" height="30"/>
+                <div title="Add Doc" onClick={onNewDoc} className='cursor-pointer flex gap-1  text-base px-3 p-1 rounded-md'>
+                    <IconAddDoc/>
                 </div>           
             </div>
             <div onClick={onEnter}
@@ -65,12 +67,13 @@ const OptionBar = ({mode, setMode, onEnter} : {
     )
 }
 
-const QuestionInput = ({responseLength, setResponseLength, mode, setMode, onEnter} : {
+const QuestionInput = ({responseLength, setResponseLength, mode, setMode, onEnter, onNewDoc} : {
     responseLength: string,
     setResponseLength: (responseLength: string) => void
     mode: string,
     setMode: (responseLength: string) => void,
     onEnter: () => void
+    onNewDoc: () => void
 }) => {
     const isDarkMode = useSelector((state: IRootState) => state.themeConfig.isDarkMode);
     const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === 'rtl';
@@ -82,7 +85,7 @@ const QuestionInput = ({responseLength, setResponseLength, mode, setMode, onEnte
                     className='w-full text-lg py-1 bg-inherit'
                     placeholder='Ask a follow-up...'/>
             </div>
-            <OptionBar mode={mode} setMode={setMode} onEnter={onEnter}/>
+            <OptionBar mode={mode} setMode={setMode} onEnter={onEnter} onNewDoc={onNewDoc}/>
         </div>
     )
 }
