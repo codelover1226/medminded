@@ -10,7 +10,7 @@ import IconThumbDown from '@/components/icon/answer/icon-thumb-down';
 import IconRightArrow from '@/components/icon/home/icon-right-arrow';
 
 const ThumbDownPopUp = ({onThumbDown}:{
-    onThumbDown:(payload : {payload:any}) => void
+    onThumbDown:({ options, comments } : { options:any, comments:any }) => void
 }) => {
     const isDarkMode = useSelector((state : IRootState) => state.themeConfig.isDarkMode);
     const isRtl = useSelector((state : IRootState) => state.themeConfig.rtlClass) === 'rtl';

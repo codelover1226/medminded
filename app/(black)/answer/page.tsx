@@ -12,6 +12,9 @@ import Image from 'next/image';
 import QuestionInput from '@/components/home/question-input2';
 import PdfViewer from '@/components/PdfViewer';
 import IconMode from '@/components/icon/home/icon-mode';
+import IconHome from '@/components/icon/sidebar/icon-home';
+import IconHistory from '@/components/icon/sidebar/icon-history';
+import IconLibrary from '@/components/icon/sidebar/icon-library';
 import IconList from '@/components/icon/answer/icon-list';
 import IconCopy from '@/components/icon/answer/icon-copy';
 import IconShareWindow from '@/components/icon/answer/icon-share-window';
@@ -40,6 +43,7 @@ const Answer = () => {
     const [responseLength, setResponseLength] = useState<string>('standard');
     const [mode, setMode] = useState<string>('standard');
     const [hiddenCopyMsg, setHiddenCopyMsg] = useState<boolean>(true);
+    const [hiddenCitation, setHiddenCitation] = useState<boolean>(true);
 
     const onEnter = () => {
         console.log("on Enter")
@@ -90,24 +94,24 @@ const Answer = () => {
                                     btnClassName="relative group block"
                                     button={<div className="h-9 w-9 bg-white-light/40 p-2 hover:bg-white-light/90 dark:bg-dark/40 dark:hover:bg-dark/60 rounded-full object-cover saturate-50 group-hover:saturate-100"><Image src="/assets/images/menu.png" alt="menu" width="50" height="50" /></div>}
                                 >
-                                    <ul className="w-[150px] !py-0 font-semibold text-dark dark:text-white-dark dark:text-white-light/90">
+                                    <ul className="w-[150px] bg-white !py-0 font-semibold text-dark dark:text-white-dark dark:text-white-light/90">
 
                                         <li>
-                                            <Link href="/users/profile" className="dark:hover:text-white">
-                                                <IconUser className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" fill={"black"} />
-                                                Profile
+                                            <Link href="/home" className="dark:hover:text-white text-[#636262]">
+                                                <IconHome className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" fill={"#636262"} />
+                                                <div className='pl-2'>Home</div>                                                
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/apps/mailbox" className="dark:hover:text-white">
-                                                <IconSetting className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" fill={"black"} />
-                                                Setting
+                                            <Link href="/library" className="dark:hover:text-white text-[#636262]">
+                                                <IconLibrary className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" fill={"#636262"} />
+                                                <div className='pl-2'>Library</div>                                                
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/auth/boxed-lockscreen" className="dark:hover:text-white">
-                                                <IconLogout className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" fill={"black"} />
-                                                Logout
+                                            <Link href="/history" className="dark:hover:text-white text-[#636262]">
+                                                <IconHistory className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" fill={"#636262"} />
+                                                <div className='pl-2'>History</div>                                                
                                             </Link>
                                         </li>
                                     </ul>
@@ -163,7 +167,11 @@ const Answer = () => {
                         <div>
                             <div className='flex gap-4 items-center justify-start py-4'>                                
                                 <div className='dropdown'>
-                                    <Dropdown
+                                    <div onClick={() => setHiddenCitation(!hiddenCitation)} 
+                                        className = 'text-base px-4 bg-[#F0EFED] hover:bg-[#ECF1FF] cursor-pointer flex items-center justify-between gap-1 p-1 rounded-md' > 
+                                        <IconList/>Citation<IconArrowDown/>
+                                    </div>
+                                    {false && <Dropdown
                                         offset={[0, 8]}
                                         placement={`top-start`}
                                         btnClassName="relative group block"
@@ -199,7 +207,7 @@ const Answer = () => {
                                                 </div>
                                             </li>
                                         </ul>
-                                    </Dropdown>
+                                    </Dropdown>}
                                 </div>
                                 <div className='cursor-pointer relative' onClick={onCopy}>
                                     <IconCopy/>
@@ -215,6 +223,9 @@ const Answer = () => {
                                     <ThumbDownPopUp onThumbDown={onThumbDown}/>
                                 </div>
                             </div>
+                            {!hiddenCitation && <div>
+                                Citation
+                            </div>}
                             <QuestionInput
                                 responseLength={responseLength} setResponseLength={setResponseLength}
                                 mode={mode} setMode={setMode} onEnter={onEnter} onNewDoc={onNewDoc}
